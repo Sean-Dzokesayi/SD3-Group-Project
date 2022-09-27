@@ -1,0 +1,42 @@
+
+SD3 Group Project
+
+Minutes: 19 September 2022
+
+Hotel:
+Take reservations up to 1 year in advance
+Total number of rooms: 200 
+Rooms: Double, twin, single (cots that fit in double or twin room)
+Meal packages: +
+Buffet in dinning room included in the breakfast price
+Leisure center 
+Hotel follows how aircrafts charge for seats 
+
+Staff: 
+Reception: Reception manager, 
+Full time stock room person,
+Bar manager,
+2 full time bar people 
+Number of part time people 
+ Concern of computer systems being hacked. 
+Permanent Chef
+Ability to manage employees (suspend, ban)
+
+Food:
+Manage food (bearing in mind expiry dates etc…)
+2 separate fridges (Cooked Fridge and Raw fridge)
+If cooked food is not sold, it is given to charity
+Ingredients need to be ordered in advance 
+
+Orders:
+Keeping track of items. Some deliveries are allowed partial some are not
+(Yes to partial , No to partial)
+
+
+App Type: 
+Windows Desktop Application 
+
+
+
+Agenda for the next meeting
+
