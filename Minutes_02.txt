@@ -1,1 +1,46 @@
+SD3 Group Project
 
+Minutes: 27 September 2022
+
+Meeting Type : Client Meeting
+
+Location Room : 8A106
+
+Names of those present : Sean, Azmat, Romaric, Ben
+
+Names of those absent : nobody
+
+Point dicussed are below : 
+
+-> Develop Use Cases & Actors
+-> Eletronic keys/doors
+	-> How to track it on the system?
+-> Timetable for staff
+	-> Cleaners are relevant
+		-> Guests checking out of room. Rooms need to be cleaned
+	-> Need a way to track if rooms are cleaned or not cleaned
+	-> Out by a certain time - 11:00
+-> Stock Room
+	-> Stock Room also has Bar Stock inside there
+	-> 10 locations per stock room rack
+	-> 3 racks in stock room
+		-> Isle A, B, C
+		-> 3 levels per rack
+		-> Chill, Frozen, Fridge, Room Temp Storage
+-> Chef has pick list, sorted by stock room location
+-> Bar Manager also has a pick list
+-> Bar has a local storage
+-> Local Store in the Kitchen
+	-> Mini version of the stock room
+	-> Chill, Frozen, Fridge, Room Temp Storage
+-> Store Room also stores towels and linen and cleaning supplies
+	-> Towels and linen changed every two days or unless client asked.
+	-> An outside company will take the towels, linen and sheets to be cleaned
+	-> They also drop of the fresh sheets, towels and linen.
+	-> If 2 months old scrap the sheets, towels and linen or give them to charity
+-> Seperate Store Room for the kegs (Local store behind bar)
+	-> 88 pints per keg
+	-> multipul taps
+-> Stock Take
+	-> Once a month
+	-> Keep Track of products
