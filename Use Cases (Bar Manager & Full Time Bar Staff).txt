@@ -1,0 +1,104 @@
+Bar Manager Use Cases
+
+-> Track Stock
+
+Use Case Name: Track Stock
+   
+Participating Actor:    Bar Manager
+
+Entry Conditions:    
+        1. A stock of the Bar stock needs to be undertaken. 
+        2. The Track Stock function on the system has been invoked. 
+
+Flow of Events: 
+        1. The Bar manager opens up the track stock function on the system. 
+        2. The Bar manager counts the number of all products in fridges and records the figures into the system. 
+        3. From there the system responds with a screen to say product has been recorded. 
+        4. The Bar manager repeats this process for the rest of the products. 
+        5. The Bar manager confirms. 
+
+Exit Conditions:   
+        1. The all the products have been recorded.
+
+-> Order Bar Stock
+
+Use Case Name: Order Bar Stock
+   
+Participating Actor:    Bar Manager
+
+Entry Conditions:    
+        1. An order for the bar needs to be undertaken. 
+        2. The Order Bar Stock function on the system has been invoked. 
+
+Flow of Events: 
+        1. The Bar manager opens up the order bar stock function on the system. 
+        2. The Bar manager looks at all the products in the fridges and orders more depending on how low the stock is.
+        3. From there the system responds with a screen to say product has been ordered. 
+        4. The Bar manager repeats this process for the rest of the products. 
+        5. The Bar manager confirms. 
+
+Exit Conditions:   
+        1. The all the products have been ordered.
+
+-> Replace Empty Bags
+
+Use Case Name: Track Stock
+   
+Participating Actor:    Bar Manager
+
+Entry Conditions:    
+        1. A stock of the Bar stock needs to be undertaken. 
+        2. The Track Stock function on the system has been invoked. 
+
+Flow of Events: 
+        1. The Bar manager opens up the track stock function on the system. 
+        2. The Bar manager counts the number of all products in fridges and records the figures into the system. 
+        3. From there the system responds with a screen to say product has been recorded. 
+        4. The Bar manager repeats this process for the rest of the products. 
+        5. The Bar manager confirms. 
+
+Exit Conditions:   
+        1. The all the products have been recorded.
+
+-> Take Orders from Customers
+
+Use Case Name: Take orders from customers
+   
+Participating Actor(s):    Bar Manager & Full Time Bar Staff
+
+Entry Conditions:    
+        1. A Customer orders a drink at the bar. 
+        2. The Ordering function on the system has been invoked. 
+
+Flow of Events: 
+        1. The Bar manager or the Full Time Bar Staff opens up the order function on the system. 
+        2. The Bar manager or the Full Time Bar staff places the order of the drink into the system. 
+        3. From there the system responds with a screen to display that the order has been placed. 
+        4. The Bar manager or the Full Time Bar Staff confirms.  
+        5. The System prints out a receipt of the order and the Bar Manager or the Full Time Bar Staff gives it to the customer. 
+       
+Exit Conditions:   
+        1. The drinks have been served to the customer.
+
+Full Time Bar Staff Use Cases
+
+-> Keep Bar Fridge Stocked
+
+Use Case Name: Keep Bar Fridge Stocked
+   
+Participating Actor:    Full Time Bar Staff
+
+Entry Conditions:    
+        1. The Full Time Bar Staff goes to fill the stock in the fridges. 
+        2. The Stock Filling function on the system has been invoked. 
+
+Flow of Events: 
+        1. The Full Time Bar Staff opens the Fill Stock function on the system. 
+        2. After each product stocked back into the fridges the Bar Staff logs this into the system so the system knows what stock was taken out of the store fridge and been placed in the bar fridge. 
+        3. From there the system responds with a screen saying that the product has been stocked up into the fridge. 
+        4. The Full Time Bar Staff confirms.  
+        5. The Full Time Bar Staff repeats this process for the rest of products.
+        5. The System prints out a receipt of the order and the Bar Manager or the Full Time Bar Staff gives it to the customer. 
+       
+Exit Conditions:   
+        1. The drinks have been stocked up.
