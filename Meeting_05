@@ -1,0 +1,42 @@
+Main use cases: 13/10
+- Create reservation
+- Check-in and check out
+- Take orders
+- Pay now/later
+
+
+Classes:
+	MenuItem
+- Name: String
+- Ingredients: [String]*
+- instruction: String
+- Cost: Double
+
+
+	Order 
+- OrderNo: Int
+- TableNo: Int
+- TotalCost: Double
+- FoodOrder: [MenuItem]
+- Allergens/Extra Info: String
+- IsPaid: boolean
+- ————————
+- Void PayNow(int orderID)
+- Void PayLater(int orderID)
+- Void ViewOrder()
+
+Reservation
+- ID: int
+- Name: String
+- ReservationDate: DateTime
+- Address: String
+- Phone: Int
+- ClientDetail: String
+- RoomType: String
+- Packages: [String] (breakfast, leisure centre)
+- Cost: Double
+- —————
+- Void Checkin(int reservationID)
+- Void Checkin(int reservationID)
+
+
