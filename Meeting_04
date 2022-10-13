@@ -1,0 +1,28 @@
+SD3 Group Project: 11/10 
+
+Chef: 
+- View produce list sorted by best before date
+- Have the system recommend the most sold items  
+- Display different items depending on the time of day or season
+- Create menus 
+- View customer orders (and how long it was made)*
+- A way to alert other staff that the order has been prepared
+- System will calculate how much of each ingredient is required for x number of portions of a dish. Spices and herbs don’t have to be accounted for (low cost items)
+
+Bar:
+- Capacity: 300
+- No assigned seats
+
+Stock:
+- Receives ingredient list from the chef (menu)
+- Removes items from stock room 
+- Receives alert if stock runs low or if an ingredient is finished. Able to place order
+
+Customer:
+- Display order total when payment is being made
+- Add option to check in
+
+Reception Manager:
+- Check availability 
+
+
