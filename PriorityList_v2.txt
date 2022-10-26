@@ -1,0 +1,32 @@
+P1 I1 : 
+
+-> View Room Availability : sean
+-> Take Customer Orders : Ben
+-> Pay Now/Pay Later : Azmat
+-> Check-In/Check-Out : Romaric
+
+
+P1 I2 : 
+
+-> Log-In/Log-Out : common : Azmat
+-> Update/Delete Reservation : Romaric
+-> Create Reservation : Sean
+-> View Next Order/Confirm Order status : Ben
+
+P1 I3 : 
+
+-> Add Employee : common : Sean
+-> Check Produce Dates : Sean
+-> Keep Bar Fridge Stocked : Ben
+-> Reopen Employee Account : common : Ben
+-> Delete Employee : common : Romaric
+-> Suspend Employee : common : Romaric
+-> Place Orders : Azmat
+-> Confirm Stocked Picked : Azmat
+
+BackLog/ P1 I4: 
+
+-> View Stock Picking List : Sean
+-> Replace Empty Kegs : Azmat
+-> Track Stock : Romaric
+-> Order Bar Stock : Ben
