@@ -1,0 +1,31 @@
+Use Cases
+
+P1 I1 : 
+
+-> View Room Availability: Sean
+-> Take Customer Orders: Ben
+-> Pay Now/Pay Later: Azmat
+-> Check-In/Check-Out : Romaric
+
+P1 I2 : 
+
+-> Log-In/Log-Out : Common
+-> Update/Delete Reservation
+-> Create Reservation
+-> View Next Order/Confirm Order status
+
+P1 I3 : 
+-> Add Employee : Common
+-> Check Produce Dates
+-> Keep Bar Fridge Stocked
+-> Reopen Employee Account : Common
+-> Delete Employee: Common
+-> Suspend Employee: Common
+-> Place Orders
+-> Confirm Stocked Picked
+-> View Stock Picking List
+
+Backlog : 
+-> Replace Empty Kegs
+-> Track Stock
+-> Order Bar Stock
