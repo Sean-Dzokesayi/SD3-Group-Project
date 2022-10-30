@@ -1,0 +1,361 @@
+
+Create Employee Table:
+
+USE [Hotel]
+GO
+
+CREATE TABLE [dbo].[Employee](
+	[Name] [nvarchar](20) NOT NULL,
+	[Password] [nvarchar](50) NOT NULL,
+	[Department] [nvarchar](35) NOT NULL,
+	[DateOfBirth] [nvarchar](35) NOT NULL,
+	[isSuspended] [int] NOT NULL,
+	[employeeID] [int] NOT NULL,
+	[employmentDate] [date] NOT NULL
+ CONSTRAINT [PK_Employees] PRIMARY KEY CLUSTERED 
+(
+	[employeeID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+/* Populate Employee Table */
+
+USE [Hotel]
+GO
+
+INSERT INTO [dbo].[Employee]
+           ([Name]
+           ,[Password]
+           ,[Department]
+           ,[DateOfBirth]
+		   ,[isSuspended]
+		   ,[employeeID]
+		   ,[employmentDate])
+     VALUES
+           ('Sean','Password','General Manager','24/07/2002', 0, 1, '01/01/2022')
+GO
+
+------------------------------------------------- End Employee Table ------------------------------------------------------------------------
+
+Create Order Table:
+
+
+USE [Hotel]
+GO
+
+CREATE TABLE [dbo].[Order](
+	[OrderNo] [int] NOT NULL,
+	[ReservationID] [int] NOT NULL,
+	[OrderTotal] [float] NOT NULL,
+	[ExtraInfo] [nvarchar] (100),
+	[isPaid] [int] NOT NULL
+ CONSTRAINT [PK_Orders] PRIMARY KEY CLUSTERED 
+(
+	[OrderNo] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+/* Populate Order Table */
+
+
+
+USE [Hotel]
+GO
+
+INSERT INTO [dbo].[Order]
+           ([OrderNo]
+           ,[ReservationID]
+           ,[OrderTotal]
+           ,[ExtraInfo]
+		   ,[isPaid]
+		   )
+     VALUES
+           (1, 1, 38.35, 'Extra cheese', 0)
+GO
+
+------------------------------------------------- End Order Table ------------------------------------------------------------------------
+
+
+Create Reservation Table:
+
+
+USE [Hotel]
+GO
+
+CREATE TABLE [dbo].[Reservation](
+	[reservationID] [int] NOT NULL,
+	[name] [nvarchar] (30) NOT NULL,
+	[address] [nvarchar] (100),
+	[phone] [int] NOT NULL,
+	[roomNumber] [int] NOT NULL,
+	[roomType] [nvarchar] (30),
+	[packages] [nvarchar] (200),
+	[cost] [float] NOT NULL
+ CONSTRAINT [PK_Reservations] PRIMARY KEY CLUSTERED 
+(
+	[reservationID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+/* Populate Reservation Table */
+
+
+USE [Hotel]
+GO
+
+INSERT INTO [dbo].[Reservation]
+           ([reservationID]
+           ,[name]
+           ,[address]
+           ,[phone]
+	, [roomNumber]
+		   ,[roomType]
+		   ,[packages]
+		   ,[cost]
+		   )
+     VALUES
+           (1, 'Jane Doe', 'Limerick', 0112223334,1, ’Double', 'breakfast', 96.8)
+GO
+
+------------------------------------------------- End Reservation Table ------------------------------------------------------------------------
+
+Create MenuItem Table:
+
+
+USE [Hotel]
+GO
+
+CREATE TABLE [dbo].[MenuItem](
+	[menuItemID] [int] NOT NULL,
+	[name] [nvarchar] (100) NOT NULL,
+	[instructions] [nvarchar] (1000) NOT NULL,
+	[preparationTime] [int] NOT NULL,
+	[cost] [float]
+	
+ CONSTRAINT [PK_MenuItems] PRIMARY KEY CLUSTERED 
+(
+	[menuItemID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+
+/* Populate MenuItem Table */
+
+USE [Hotel]
+GO
+
+INSERT INTO [dbo].[MenuItem]
+           (
+			[menuItemID]
+           ,[name]
+           ,[instructions]
+		   ,[preparationTime]
+           ,[cost]
+		   )
+     VALUES
+           (1, 'Spaghetti bolognese', 'Heat a large saucepan over a medium heat. Add a tablespoon of olive oil and once hot add the beef mince and a pinch of salt and pepper. Cook the mince until well browned over a medium-high heat (be careful not to burn the mince. It just needs to be a dark brown colour). Once browned, transfer the mince to a bowl and set aside.
+
+Add another tablespoon of oil to the saucepan you browned the mince in and turn the heat to medium. Add the onions and a pinch of salt and fry gently for 5-6 minutes, or until softened and translucent. Add the garlic and cook for another 2 minutes. Add the grated carrot then pour the mince and any juices in the bowl back into the saucepan.
+
+Add the tomatoes to the pan and stir well to mix. Pour in the stock, bring to a simmer and then reduce the temperature to simmer gently for 45 minutes, or until the sauce is thick and rich. Taste and adjust the seasoning as necessary.', 30, 12.5)
+GO
+
+------------------------------------------------- End MenuItem Table ------------------------------------------------------------------------
+
+Create Room Table:
+
+
+USE [Hotel]
+GO
+
+CREATE TABLE [dbo].[Room](
+	[roomNumber] [int] NOT NULL,
+	[roomType] [nvarchar] (30) NOT NULL,
+	[isOccupied] [int]  NOT NULL,
+	[isCleaned] [int] NOT NULL,
+	[floorNumber] [int] NOT NULL
+	
+ CONSTRAINT [PK_Rooms] PRIMARY KEY CLUSTERED 
+(
+	[roomNumber] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+
+
+------------------------------------------------- End Room Table ------------------------------------------------------------------------
+Create Stock Table:
+
+
+USE [Hotel]
+GO
+
+CREATE TABLE [dbo].[Stock](
+	[stockID] [int] NOT NULL,
+	[Name] [nvarchar](20) NOT NULL,
+	[Description] [nvarchar](50) NOT NULL,
+	[Department] [nvarchar](35) NOT NULL,
+	[StorageLocation] [nvarchar](35) NOT NULL,
+	[Units] [int] NOT NULL,
+	[Cost] [float] NOT NULL,
+	[BestBefore] [date]
+
+ CONSTRAINT [PK_Stocks] PRIMARY KEY CLUSTERED 
+(
+	[stockID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+
+/* Populate Stock Table */
+
+USE [Hotel]
+GO
+
+INSERT INTO [dbo].[Stock]
+           ([stockID]
+           ,[Name]
+           ,[Description]
+           ,[Department]
+	       ,[StorageLocation]
+		   ,[Units]
+		   ,[Cost]
+		   ,[BestBefore]
+		   
+		   )
+     VALUES
+           (1,  'Beef mince', 'Meat', 'Restuarant', 'Kitchen Fridge', 30, 5.99, '01/01/2023'),
+		   (2,  'Tomatoes', 'Vegetables', 'Restuarant', 'Kitchen Fridge', 100, 0.49, '01/01/2023')
+
+		   
+GO
+------------------------------------------------- End Stock Table ------------------------------------------------------------------------
+
+
+/************************************************************************************************************/
+/************************************************************************************************************/
+/************************************  LOOK UP TABLES **************************************/
+/************************************************************************************************************/
+/************************************************************************************************************/
+
+
+Create OrderItem Table:
+
+
+
+USE [Hotel]
+GO
+
+CREATE TABLE [dbo].[OrderItem](
+	[id] [int] NOT NULL,
+	[OrderNo] [int] NOT NULL,
+	[menuItemID] [int] NOT NULL
+
+ CONSTRAINT [PK_OrderItems] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+/* Populate OrderItem Table */
+
+
+INSERT INTO [dbo].[OrderItem]
+           (
+		   [id],
+		   [OrderNo],
+		   [menuItemID]
+		   )
+     VALUES
+           (1,1, 1)
+
+		   
+GO
+
+------------------------------------------------- End OrderItem Table ------------------------------------------------------------------------
+
+Create ReservationDate Table:
+
+
+USE [Hotel]
+GO
+
+CREATE TABLE [dbo].[ReservationDate](
+	[id] [int] NOT NULL,
+	[reservationID] [int] NOT NULL,
+	[reservationDate] [date] NOT NULL
+
+ CONSTRAINT [PK_ReservationDates] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+/* Populate ReservationDate Table */
+
+INSERT INTO [dbo].[ReservationDate]
+           (
+		   [id],
+		   [reservationID],
+		   [reservationDate]
+		   )
+     VALUES
+           (1,1, '03/1/2023')
+
+		   
+GO
+
+------------------------------------------------- End ReservationDate ------------------------------------------------------------------------
+
+Create MenuItemIngrediant Table:
+
+
+
+USE [Hotel]
+GO
+
+CREATE TABLE [dbo].[MenuItemIngrediant](
+	[id] [int] NOT NULL,
+	[menuItemID] [int] NOT NULL,
+	[stockID] [int] NOT NULL
+
+ CONSTRAINT [PK_MenuItemIngrediant] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+/* Populate  MenuItemingrediant Table */
+
+INSERT INTO [dbo].[MenuItemIngrediant]
+           (
+		   [id],
+		   [menuItemID],
+		   [stockID]
+		   )
+     VALUES
+           (1,1, 1),
+		   (2, 1, 2)
+
+		   
+GO
+
+------------------------------------------------- End MenuItemIngrediant ------------------------------------------------------------------------
