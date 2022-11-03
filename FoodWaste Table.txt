@@ -1,0 +1,33 @@
+WasteID : int 
+StockID : int
+RecordedDate : datetime
+
+SQL Code
+
+
+USE [Hotel]
+GO
+
+CREATE TABLE [dbo].[FoodWaste](
+	[WasteID] [int] NOT NULL,
+	[StockID] [int] NOT NULL,
+	[RecordedDate] [date] NOT NULL
+	FOREIGN KEY (StockID) REFERENCES Stock(StockID),
+ CONSTRAINT [PK_FoodWaste] PRIMARY KEY CLUSTERED
+(
+	[WasteID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+USE [Hotel]
+GO
+
+INSERT INTO [dbo].[FoodWaste]
+           ([WasteID]
+           ,[StockID]
+		   ,[RecordedDate])
+     VALUES
+           (1,1,'02/01/2023')
+GO
