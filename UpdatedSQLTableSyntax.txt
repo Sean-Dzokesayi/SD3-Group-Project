@@ -1,0 +1,246 @@
+SQL Table Syntax
+
+
+Create Employee Table:
+
+USE [HotelSystem]
+GO
+
+CREATE TABLE [dbo].[Employee](
+	[EmployeeID] [int] NOT NULL,
+	[Name] [nvarchar](20) NOT NULL,
+	[Password] [nvarchar](50) NOT NULL,
+	[Department] [nvarchar](35) NOT NULL,
+	[DateOfBirth] [nvarchar](35) NOT NULL,
+	[isSuspended] [int] NOT NULL,
+	[EmploymentDate] [date] NOT NULL
+ CONSTRAINT [PK_Employees] PRIMARY KEY CLUSTERED 
+(
+	[EmployeeID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+Create Reservation Table:
+
+USE [HotelSystem]
+GO
+
+CREATE TABLE [dbo].[Reservation](
+	[ReservationID] [int] NOT NULL,
+	[GuestName] [nvarchar](20) NOT NULL,
+	[Address] [nvarchar](50) NOT NULL,
+	[PhoneNumber] [nvarchar](35) NOT NULL,
+	[RoomNumber] [int] NOT NULL,
+	[Packages] [nvarchar] (50) NOT NULL,
+	[Cost] [float] NOT NULL,
+	[ProposedCheckInDate] [date] NOT NULL,
+	[ProposedCheckOutDate] [date] NOT NULL,
+	[SaleNumber] [int] NOT NULL,
+	[ActualCheckInDate] [date] NOT NULL,
+	[ActualCheckOutDate] [date] NOT NULL,
+	[EmployeeID] [int] NOT NULL
+ CONSTRAINT [PK_Reservation] PRIMARY KEY CLUSTERED 
+(
+	[ReservationID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+
+Create Stock Table:
+
+USE [HotelSystem]
+GO
+
+CREATE TABLE [dbo].[Stock](
+	[StockID] [int] NOT NULL,
+	[Name] [nvarchar](20) NOT NULL,
+	[Description] [nvarchar](50) NOT NULL,
+	[StorageLocation] [nvarchar](35) NOT NULL,
+	[Units] [int] NOT NULL,
+	[Cost] [float] NOT NULL,
+	[ExpriyDate] [date] NOT NULL
+ CONSTRAINT [PK_Stock] PRIMARY KEY CLUSTERED 
+(
+	[StockID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+
+Create Ingredients Table:
+
+USE [HotelSystem]
+GO
+
+CREATE TABLE [dbo].[Ingredients](
+	[IngredientID] [int] NOT NULL,
+	[IngredientName] [nvarchar](50) NOT NULL,
+	[StockID] [int] NOT NULL
+ CONSTRAINT [PK_Ingredients] PRIMARY KEY CLUSTERED 
+(
+	[IngredientsID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+
+
+Create Room Table:
+
+USE [HotelSystem]
+GO
+
+CREATE TABLE [dbo].[Room](
+	[RoomID] [int] NOT NULL,
+	[RoomType] [nvarchar](50) NOT NULL,
+	[isOccupied] [int] NOT NULL,
+	[isCleaned] [int] NOT NULL,
+	[FloorNumber] [int] NOT NULL,
+	[DateLastCleaned] [date] NOT NULL,
+	[EmployeeID] [int] NOT NULL
+ CONSTRAINT [PK_Room] PRIMARY KEY CLUSTERED 
+(
+	[RoomID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+
+
+Create DrinkSale Table:
+
+USE [HotelSystem]
+GO
+
+CREATE TABLE [dbo].[DrinkSale](
+	[ItemID] [int] NOT NULL,
+	[Name] [nvarchar](50) NOT NULL,
+	[Cost] [float] NOT NULL,
+	[StockID] [int] NOT NULL,
+	[QuantitySold] [int] NOT NULL,
+	[MenuType] [nvarchar] (50) NOT NULL
+ CONSTRAINT [PK_DrinkSale] PRIMARY KEY CLUSTERED 
+(
+	[ItemID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+
+Create FoodSale Table:
+
+USE [HotelSystem]
+GO
+
+CREATE TABLE [dbo].[FoodSale](
+	[ItemID] [int] NOT NULL,
+	[Name] [nvarchar](50) NOT NULL,
+	[PrepTime] [int] NOT NULL,
+	[Cost] [float] NOT NULL,
+	[StockID] [int] NOT NULL,
+	[QuantitySold] [int] NOT NULL,
+	[MenuType] [nvarchar] (50) NOT NULL
+ CONSTRAINT [PK_FoodSale] PRIMARY KEY CLUSTERED 
+(
+	[ItemID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+
+
+Create FoodWaste Table:
+
+USE [HotelSystem]
+GO
+
+CREATE TABLE [dbo].[FoodWaste](
+	[WasteID] [int] NOT NULL,
+	[StockID] [int] NOT NULL,
+	[RecordedDate] [date] NOT NULL,
+	[ExpiryDate] [date] NOT NULL,
+	[EmployeeID] [int] NOT NULL
+ CONSTRAINT [PK_FoodWaste] PRIMARY KEY CLUSTERED 
+(
+	[WasteID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+
+
+Create Layaway Table:
+
+USE [HotelSystem]
+GO
+
+CREATE TABLE [dbo].[Layaway](
+	[LayawayID] [int] NOT NULL,
+	[OrderNumber] [int] NOT NULL,
+	[ReservationNumber] [int] NOT NULL,
+	[TableNumber] [int] NOT NULL,
+	[OrderCost] [date] NOT NULL
+ CONSTRAINT [PK_Layaway] PRIMARY KEY CLUSTERED 
+(
+	[LayawayID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+
+
+
+Create Payment Table:
+
+USE [HotelSystem]
+GO
+
+CREATE TABLE [dbo].[Payment](
+	[PaymentID] [int] NOT NULL,
+	[SaleNumber] [int] NOT NULL,
+	[Tip] [float] NOT NULL,
+	[PaymentTotal] [float] NOT NULL,
+	[ReservationNumber] [int] NOT NULL,
+	[TableNumber] [int] NOT NULL
+ CONSTRAINT [PK_Payment] PRIMARY KEY CLUSTERED 
+(
+	[PaymentID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+
+Create Sale Table:
+
+USE [HotelSystem]
+GO
+
+CREATE TABLE [dbo].[Sale](
+	[OrderNumber] [int] NOT NULL,
+	[TableNumber] [int] NOT NULL,
+	[ItemsOrdered] [nvarchar] (1000) NOT NULL,
+	[ExtraInfo] [nvarchar] (100) NOT NULL,
+	[isPaid] [int] NOT NULL,
+	[Cost] [float] NOT NULL,
+	[SaleNumber] [int] NOT NULL,
+	[EmployeeID] [int] NOT NULL,
+	[OrderStatus] [nvarchar] (20) NOT NULL
+ CONSTRAINT [PK_Sale] PRIMARY KEY CLUSTERED 
+(
+	[OrderNumber] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
